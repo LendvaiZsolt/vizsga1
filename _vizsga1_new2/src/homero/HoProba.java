@@ -14,22 +14,22 @@ public class HoProba {
 		letrehoz(hom1);
 		kiiras(hom1);
 		System.out.println("**********************");
-		Homerseklet.konvHomerseklet(hom1[0]);
+		Homerseklet.konvHomerseklet(hom1[0], mertekegyseg.KELVIN);
 		kiiras(hom1);
 		System.out.println("**********************");
-		Homerseklet.konvHomerseklet(hom1[1]);
+		Homerseklet.konvHomerseklet(hom1[1], mertekegyseg.CELSIUS);
 		kiiras(hom1);
 		System.out.println("**********************");
-		atlaghom(hom1);
+		atlaghom(hom1, mertekegyseg.KELVIN);
 		kiiras(hom1);
 	}
 
-	private static void atlaghom(Homerseklet[] hom1) {
+	private static void atlaghom(Homerseklet[] hom1, mertekegyseg me) {
 		double ossz = 0;
 		int count = 0;
 		for (int i = 0; i < hom1.length; i++) {
-			if (hom1[i].getMertegys() == mertekegyseg.CELSIUS) {
-				Homerseklet.konvHomerseklet(hom1[i]);
+			if (hom1[i].getMertegys() == me.CELSIUS) {
+				Homerseklet.konvHomerseklet(hom1[i], me);
 				ossz = ossz + hom1[i].getHomerseklet();
 			} else {
 				ossz = ossz + hom1[i].getHomerseklet();

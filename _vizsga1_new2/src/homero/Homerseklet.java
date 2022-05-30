@@ -21,16 +21,16 @@ public class Homerseklet {
 		this.mertegys = mertekegyseg.CELSIUS;
 	}
 
-	public static void konvHomerseklet(Homerseklet h1) {
+	public static void konvHomerseklet(Homerseklet h1, mertekegyseg me) {
 		double homok = 0;
-		if (h1.getMertegys() == mertekegyseg.CELSIUS) {
+		if (h1.getMertegys() == mertekegyseg.CELSIUS && me == mertekegyseg.KELVIN) {
 			homok = h1.getHomerseklet() + 273.15;
 			h1.setHomerseklet(homok);
 			h1.setMertegys(mertekegyseg.KELVIN);
-		} else {
+		} else if (h1.getMertegys() == mertekegyseg.KELVIN && me == mertekegyseg.CELSIUS){
 			homok = h1.getHomerseklet() - 273.15;
 			h1.setHomerseklet(homok);
-			h1.setMertegys(mertekegyseg.KELVIN);
+			h1.setMertegys(mertekegyseg.CELSIUS);
 		}
 	}
 
