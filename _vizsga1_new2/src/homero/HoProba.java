@@ -21,6 +21,7 @@ public class HoProba {
 		kiiras(hom1);
 		System.out.println("**********************");
 		atlaghom(hom1, mertekegyseg.KELVIN);
+		System.out.println("**********************");
 		kiiras(hom1);
 	}
 

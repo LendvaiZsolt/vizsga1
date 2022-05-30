@@ -3,20 +3,28 @@ package homero;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import homero.Homerseklet.mertekegyseg;
 
 public class HoProbaDin {
 
 	public static void main(String[] args) {
+		//
 		ArrayList<Homerseklet> hom2 = new ArrayList<Homerseklet>();
 		createlist(hom2);
 		kiirasdint(hom2);
 		System.out.println("************************");
+		
+		hom2.sort(Comparator.comparing(Homerseklet::getHomerseklet).reversed());
+		kiirasdint(hom2);
+		System.out.println("************************");
+		
 		Homerseklet[] hom3 = new Homerseklet[hom2.size()];
 		konvert(hom2, hom3);
 		kiirastomb(hom3);
 		System.out.println("************************");
+		
 		konv(hom3, mertekegyseg.CELSIUS);
 		kiirastomb(hom3);
 		System.out.println("************************");
